@@ -6,7 +6,7 @@
 	"scripts": {
 		"lint": "eslint --ext .js,.ts,.jsx,.tsx --fix --quiet ./packages"
 	},
-	"author": "",
+	"author": "Joz zzc5464@foxmail.com",
 	"license": "ISC",
 	"devDependencies": {
 		"@commitlint/cli": "^19.2.1",
