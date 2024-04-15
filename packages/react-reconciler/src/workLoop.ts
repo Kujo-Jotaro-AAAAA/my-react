@@ -30,7 +30,7 @@ function completeUnitOfWork(fiber: FiberNode) {
 			workInProgress = sibling;
 			return;
 		}
-		// 然后找父
+		// 兄弟都没了，就开始找父
 		node = node.return;
 		workInProgress = node;
 	} while (node !== null);

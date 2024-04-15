@@ -12,3 +12,10 @@ export interface ReactElementType {
 	ref: Ref;
 	__author: string;
 }
+
+/**
+ * 支持两种更新行为
+ * this.setState(1)
+ * this.setState(state => state * 2)
+ */
+export type Action<State> = State | ((prevState: State) => State);
