@@ -1,11 +1,16 @@
 import { Props, Key, Ref } from 'shared/ReactTypes';
 import { Container } from 'hostConfig';
+import { WorkTag } from './workTags';
 /**
  *
  */
 export class FiberNode {
+	tag: WorkTag;
 	// 运行时属性
 	pendingProps: Props;
+	key: Key;
+	// 用于绑定根节点的指针
+	stateNode: any;
 	// 工作完成后的属性
 	memoizedProps: Props | null;
 
@@ -17,9 +22,10 @@ export class FiberNode {
 
 	// 用于切换current和workInProgress
 	alternate: FiberNode | null;
-	// 用于绑定根节点的指针
-	stateNode: any;
-	constructor(pendingProps: Props) {
+	updateQueue: unknown;
+	constructor(tag: WorkTag, pendingProps: Props, key: Key) {
+		this.tag = tag;
+		this.key = key;
 		this.pendingProps = pendingProps;
 		this.memoizedProps = null;
 
@@ -29,6 +35,7 @@ export class FiberNode {
 		this.index = 0;
 		this.stateNode = null;
 		this.alternate = null;
+		this.updateQueue = null;
 	}
 }
 
