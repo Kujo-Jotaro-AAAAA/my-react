@@ -42,7 +42,7 @@ export const enqueueUpdate = <Action>(
 // ========================================================================
 
 /**
- * @description 费update数据的方法
+ * @description 消费update数据的方法
  * @param baseState
  * @param pendingUpdate
  * @returns
